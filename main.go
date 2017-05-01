@@ -38,6 +38,9 @@ func is_Number(b byte) bool {
 }
 
 func is_Frame(b []byte) bool {
+	if (len(b) < 54) {
+		return false
+	}
 	return is_Number(b[0]) && b[1] == 124
 }
 
